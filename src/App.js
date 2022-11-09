@@ -1,14 +1,23 @@
+import react, {useEffect, useState} from "react"
 import './App.css';
-import {getMoviesByName} from './utils';
-import MovieCard from './movieCard';
+import {getMoviesByName, getMoviesByID} from './utils';
+import MovieCard from './components/MovieCard';
 
 function App() {
   console.clear();
-  console.log(getMoviesByName("spider-man"))
+  const [movieTitle, setMovieTitle] = useState()
+  const [posterUrl, setPosterUrl] = useState()
+  // const batman = getMoviesByName("batman");
+  getMoviesByName("batman-v-superman", setMovieTitle, setPosterUrl);
+  console.log(movieTitle)
+  console.log(posterUrl)
+  // setMovieTitle(batman.Title)
   return (
   <>
-    <h1>Hello World</h1>
-    <MovieCard title="a" type="b" posterUrl="c" />
+    <h1>React Movie App</h1>
+    <MovieCard title={movieTitle} type="b" posterUrl={posterUrl} />
+    
+    {/* <MovieDetails /> */}
   </>
   );
 }
