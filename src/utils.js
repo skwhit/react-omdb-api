@@ -33,18 +33,3 @@ export const getMoviesByID = async (ID) => {
   const movie = await result.json();
 };
 
-export const handleChange = (setInputValue) => {
-  setInputValue(this.target.value)
-}
-
-export const onSubmit = (setRequestTitle, inputValue, setInputValue) => {
-  this.preventDefault();
-  setRequestTitle(convertString(inputValue))
-  setInputValue("")
-  // movieInput.focus();
-}
-
-export const convertString = (str) => {
-  str = str.toLowerCase().replace(/\s+/g, "-");
-  return str;
-}
