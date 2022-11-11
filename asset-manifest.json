@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-omdb-api/static/css/main.988dfe2f.css",
+    "main.js": "/react-omdb-api/static/js/main.00f4e89d.js",
+    "index.html": "/react-omdb-api/index.html",
+    "main.988dfe2f.css.map": "/react-omdb-api/static/css/main.988dfe2f.css.map",
+    "main.00f4e89d.js.map": "/react-omdb-api/static/js/main.00f4e89d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.988dfe2f.css",
+    "static/js/main.00f4e89d.js"
+  ]
+}
