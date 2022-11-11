@@ -1,12 +1,12 @@
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 10px;
 }
 
 .titleContainer {
@@ -38,11 +38,17 @@
   text-align: center;
 }
 
+.moviesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .movieCard {
   display: flex;
   flex-direction: column;
-  width: 25%;
-  border: 1px solid grey;
+  width: 20%;
+  /* border: 1px solid grey; */
+  padding: 10px;
 }
 
 .cardBody {

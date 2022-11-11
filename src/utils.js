@@ -1,29 +1,21 @@
 const apiKey = "fd2ee82";
 
-export async function getMoviesByName(
-  movieName,
-  setMovieTitle,
-  setPosterUrl,
-  setRated,
-  setRuntime,
-  setGenre,
-  setPlot,
-  setActors,
-  setRating
-) {
+export async function getMovieByName(requestTitle, setMovie) {
   const result = await fetch(
-    `http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`
+    `http://www.omdbapi.com/?t=${requestTitle}&apikey=${apiKey}`
   );
   const movie = await result.json();
   console.log(movie);
-  setMovieTitle(movie.Title);
-  setPosterUrl(movie.Poster);
-  setRated(movie.Rated);
-  setRuntime(movie.Runtime);
-  setGenre(movie.Genre);
-  setPlot(movie.Plot);
-  setActors(movie.Actors);
-  setRating(movie.imdbRating);
+  setMovie(movie.Title);
+}
+
+export async function getMovieListByName(requestTitle, setMovies) {
+  const result = await fetch(
+    `http://www.omdbapi.com/?s=${requestTitle}&apikey=${apiKey}`
+  );
+  const movies = await result.json();
+  console.log(movies);
+  setMovies(movies.Search);
 }
 
 export const getMoviesByID = async (ID) => {
@@ -33,3 +25,7 @@ export const getMoviesByID = async (ID) => {
   const movie = await result.json();
 };
 
+export const convertString = (str) => {
+  str = str.toLowerCase().replace(/\s+/g, "-");
+  return str;
+};
