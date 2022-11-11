@@ -9,6 +9,31 @@
   padding: 10px;
 }
 
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.inputContainer button {
+  width: 100px;
+  background: lightgrey;
+  border-radius: 5px;
+}
+
+.movieInput {
+  width: 200px;
+}
+
 .pageTitle {
   text-align: center;
 }
