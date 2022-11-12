@@ -4,7 +4,9 @@ export default function MovieCard(props) {
   const { title, type, posterUrl } = props;
   return (
     <div className="movieCard">
-      <img src={posterUrl} alt="batman" />
+      <div className="movieImgContainer">
+        <img src={posterUrl} alt="batman" />
+      </div>
       <div className="cardBody">
         <h3>{title}</h3>
         <button>Movie</button>

@@ -51,15 +51,23 @@
   padding: 10px;
 }
 
+.movieImgContainer {
+  /* height: 500px; */
+}
+
+.movieCard img {
+  width: 100%;
+  height: 100%;
+  /* height: 550px; */
+  /* object-fit: contain;
+  object-position: bottom; */
+}
+
 .cardBody {
   padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 3px;
-}
-
-.cardBody img {
-  width: 100%;
 }
 
 .cardBody button {
@@ -113,9 +121,20 @@
   background-color: rgb(196, 196, 196);
 }
 
+@media (max-width: 1200px) {
+  .movieCard {
+    width: calc(100%/3);
+  }
+
+  .movieDetails {
+    width: 100%;
+  }
+}
+
+
 @media (max-width: 600px) {
   .movieCard {
-    width: 50%;
+    width: 100%;
   }
 
   .movieDetails {

@@ -11,9 +11,9 @@ import MovieDetails from "./components/MovieDetails";
 import MovieList from "./components/MovieList";
 
 function App() {
-  console.clear();
-  const [inputValue, setInputValue] = useState();
-  const [optionValue, setOptionValue] = useState(1);
+  // console.clear();
+  const [inputValue, setInputValue] = useState("");
+  const [optionValue, setOptionValue] = useState("one");
   const [requestTitle, setRequestTitle] = useState("batman-v-superman");
   const [movie, setMovie] = useState([]);
   const [movies, setMovies] = useState([]);
@@ -21,15 +21,15 @@ function App() {
   // getMoviesByName("batman", setMovies)
 
   useEffect(() => {
-    // optionValue === 1
-    getMovieListByName(requestTitle, setMovies);
-    // getMovieByName(requestTitle, setMovie);
-    setOptionValue(1);
+    optionValue === "all movies" 
+    ? getMovieListByName(requestTitle, setMovies) 
+    : getMovieByName(requestTitle, setMovie);
+    // setOptionValue("one");
   }, [requestTitle]);
 
   let count = 0;
-  console.log(movie);
-  console.log(movies);
+  // console.log(movie);
+  // console.log(movies);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -37,10 +37,13 @@ function App() {
 
   const handleOptionChange = (e) => {
     console.log(e);
-    console.log(e.target.value);
-    let value = e.target.value;
-    setOptionValue(value);
+    console.log("passed value:", e.target.value)
+    setOptionValue(e.target.value)
   };
+
+  useEffect(() => {
+    console.log("setvalue:", optionValue)
+  }, [optionValue])
 
   const onSubmit = (e) => {
     count++;
@@ -63,9 +66,9 @@ function App() {
               onChange={handleInputChange}
               autoFocus
             />
-            <select onChange={handleOptionChange} defaultValue={optionValue}>
-              <option value="1">All Movies</option>
-              <option value="2">One Movie</option>
+            <select onChange={handleOptionChange} value={optionValue}>
+              <option selected  value={"all movies"}>All Movies</option>
+              <option  value={"one movie"}>One Movie</option>
             </select>
           </div>
           <button type="submit" onClick={onSubmit}>
