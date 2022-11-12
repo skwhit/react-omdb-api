@@ -13,7 +13,7 @@ import MovieList from "./components/MovieList";
 function App() {
   // console.clear();
   const [inputValue, setInputValue] = useState("");
-  const [optionValue, setOptionValue] = useState("one");
+  const [optionValue, setOptionValue] = useState("all movies");
   const [requestTitle, setRequestTitle] = useState("batman-v-superman");
   const [movie, setMovie] = useState([]);
   const [movies, setMovies] = useState([]);
