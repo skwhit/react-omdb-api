@@ -51,10 +51,6 @@
   padding: 10px;
 }
 
-.movieImgContainer {
-  /* height: 500px; */
-}
-
 .movieCard img {
   width: 100%;
   height: 100%;
@@ -123,14 +119,13 @@
 
 @media (max-width: 1200px) {
   .movieCard {
-    width: calc(100%/3);
+    width: calc(100% / 3);
   }
 
   .movieDetails {
     width: 100%;
   }
 }
-
 
 @media (max-width: 600px) {
   .movieCard {

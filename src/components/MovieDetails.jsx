@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function MovieDetails(props) {
   const { posterUrl, title, rated, runtime, genre, plot, actors, rating } =
@@ -28,3 +29,14 @@ export default function MovieDetails(props) {
     </section>
   );
 }
+
+MovieDetails.propTypes = {
+  posterUrl: PropTypes.string,
+  title: PropTypes.string,
+  rated: PropTypes.string,
+  runtime: PropTypes.string,
+  genre: PropTypes.string,
+  plot: PropTypes.string,
+  actors: PropTypes.string,
+  rating: PropTypes.number,
+};

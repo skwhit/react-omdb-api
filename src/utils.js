@@ -2,7 +2,7 @@ const apiKey = "fd2ee82";
 
 export async function getMovieByName(requestTitle, setMovie) {
   const result = await fetch(
-    `https://www.omdbapi.com/?t=${requestTitle}&apikey=${apiKey}`
+    `http://www.omdbapi.com/?t=${requestTitle}&apikey=${apiKey}`
   );
   const movie = await result.json();
   console.log(movie);
@@ -11,7 +11,7 @@ export async function getMovieByName(requestTitle, setMovie) {
 
 export async function getMovieListByName(requestTitle, setMovies) {
   const result = await fetch(
-    `https://www.omdbapi.com/?s=${requestTitle}&apikey=${apiKey}`
+    `http://www.omdbapi.com/?s=${requestTitle}&apikey=${apiKey}`
   );
   const movies = await result.json();
   console.log(movies);

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function MovieCard(props) {
   const { title, type, posterUrl } = props;
@@ -14,3 +15,8 @@ export default function MovieCard(props) {
     </div>
   );
 }
+
+MovieCard.propTypes = {
+  title: PropTypes.string,
+  posterUrl: PropTypes.string,
+};
