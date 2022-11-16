@@ -11,7 +11,7 @@ export default function MovieList(props) {
         <MovieCard
           key={movie.imdbID}
           title={movie.Title}
-          type="b"
+          type={movie.Type}
           posterUrl={movie.Poster}
         />
       ))}

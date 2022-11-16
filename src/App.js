@@ -7,22 +7,30 @@ import MovieList from "./components/MovieList";
 import Form from "./components/Form";
 
 function App() {
-  const [requestTitle, setRequestTitle] = useState("batman");
-  const [movie, setMovie] = useState([]);
+  const [searchterm, setSearchTerm] = useState("batman");
+  const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getMovieListByName(requestTitle, setMovies);
-  }, [requestTitle]);
+    setIsLoading(true);
+    getMovieListByName(searchterm, setMovies, setError, setIsLoading);
+  }, [searchterm]);
 
   return (
     <>
       <section className="titleContainer">
         <h1 className="pageTitle">React Media App</h1>
-        <Form setRequestTitle={setRequestTitle} />
+        <Form setSearchTerm={setSearchTerm} />
       </section>
       <section className="moviesContainer">
-        <MovieList movieList={movies} />
+        {isLoading ? (
+          <h1>Loading...</h1>
+        ) : error ? (
+          <h1>{error}</h1>
+        ) : (
+          <MovieList movieList={movies} />
+        )}
       </section>
     </>
   );

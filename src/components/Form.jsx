@@ -3,10 +3,9 @@ import { convertString } from "../utils";
 import PropTypes from "prop-types";
 
 export default function Form(props) {
-  const { setRequestTitle } = props;
+  const { setSearchTerm } = props;
 
   const [inputValue, setInputValue] = useState("");
-  const [optionValue, setOptionValue] = useState("all movies");
 
   let count = 0;
 
@@ -14,14 +13,10 @@ export default function Form(props) {
     setInputValue(e.target.value);
   };
 
-  useEffect(() => {
-    console.log("setvalue:", optionValue);
-  }, [optionValue]);
-
   const onSubmit = (e) => {
     count++;
     e.preventDefault();
-    setRequestTitle(convertString(inputValue));
+    setSearchTerm(convertString(inputValue));
     setInputValue("");
   };
 
@@ -46,5 +41,5 @@ export default function Form(props) {
 }
 
 Form.propTypes = {
-  setRequestTitle: PropTypes.func,
+  setSearchTerm: PropTypes.func,
 };
