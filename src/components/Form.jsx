@@ -14,12 +14,6 @@ export default function Form(props) {
     setInputValue(e.target.value);
   };
 
-  const handleOptionChange = (e) => {
-    console.log(e);
-    console.log("passed value:", e.target.value);
-    setOptionValue(e.target.value);
-  };
-
   useEffect(() => {
     console.log("setvalue:", optionValue);
   }, [optionValue]);
@@ -33,7 +27,7 @@ export default function Form(props) {
 
   return (
     <form className="inputContainer">
-      <p>Please input a movie</p>
+      <p>Please input a movie, tv show, or videogame</p>
       <div>
         <input
           value={inputValue}
@@ -42,18 +36,6 @@ export default function Form(props) {
           onChange={handleInputChange}
           autoFocus
         />
-        <select onChange={handleOptionChange} value={optionValue}>
-          <option
-            defaultValue="all movies"
-            key="all movies"
-            value={"all movies"}
-          >
-            All Movies
-          </option>
-          <option key="one movie" value={"one movie"}>
-            One Movie
-          </option>
-        </select>
       </div>
       <button type="submit" onClick={onSubmit}>
         Submit <br />

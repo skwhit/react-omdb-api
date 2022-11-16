@@ -12,16 +12,13 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    // optionValue === "all movies"
     getMovieListByName(requestTitle, setMovies);
-    // : getMovieByName(requestTitle, setMovie);
-    // setOptionValue("one");
   }, [requestTitle]);
 
   return (
     <>
       <section className="titleContainer">
-        <h1 className="pageTitle">React Movie App</h1>
+        <h1 className="pageTitle">React Media App</h1>
         <Form setRequestTitle={setRequestTitle} />
       </section>
       <section className="moviesContainer">

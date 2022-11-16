@@ -10,7 +10,7 @@ export default function MovieCard(props) {
       </div>
       <div className="cardBody">
         <h3>{title}</h3>
-        <button>Movie</button>
+        <button>Details</button>
       </div>
     </div>
   );
