@@ -1,0 +1,44 @@
+.modal-root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: rgba(211,211,211,.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.modal-container {
+    width: 50%;
+    
+}
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 2px solid black;
+}
+
+.close button {
+    border: none;
+    background: none;
+}
+
+@media (max-width: 1200px) {
+    .modal-container {
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .modal-container {
+      width: 100%;
+    }
+
+    .modal-root {
+        height: 100%;
+    }
+  }

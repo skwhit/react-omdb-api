@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { convertString } from "../utils";
 import PropTypes from "prop-types";
+import "./form.css"
 
 export default function Form(props) {
   const { setSearchTerm } = props;

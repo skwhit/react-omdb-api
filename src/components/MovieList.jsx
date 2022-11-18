@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import PropTypes from "prop-types";
 
 export default function MovieList(props) {
-  const { movieList } = props;
+  const { movieList, setModal, setModalMovie } = props;
   // console.log(movieList);
   return (
     <>
@@ -13,6 +13,9 @@ export default function MovieList(props) {
           title={movie.Title}
           type={movie.Type}
           posterUrl={movie.Poster}
+          imdbID={movie.imdbID}
+          setModal={setModal}
+          setModalMovie={setModalMovie}
         />
       ))}
     </>
