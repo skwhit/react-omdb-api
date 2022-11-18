@@ -11,6 +11,10 @@
   border-radius: 5px;
 }
 
+.inputContainer button:hover {
+  cursor: pointer;
+}
+
 .movieInput {
   width: 200px;
 }

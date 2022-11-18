@@ -14,21 +14,15 @@ function App() {
   const [error, setError] = useState(null);
   const [modal, setModal] = useState(false);
   const [modalMovie, setModalMovie] = useState({});
-  const [scroll, setScroll] = useState("");
 
   useEffect(() => {
     setIsLoading(true);
     getMovieListByName(searchterm, setMovies, setError, setIsLoading);
   }, [searchterm]);
 
-  // useEffect(() => {
-  //   modal ? setScroll("scrollDisabled")
-  //   : setScroll("");
-  // },[modal])
-
   return (
-    <div className={`app ${scroll}`}>
-      <Modal show={modal} setModal={setModal} movie={modalMovie}/>
+    <div className="app">
+      <Modal show={modal} setModal={setModal} movie={modalMovie} />
       <section className="titleContainer">
         <h1 className="pageTitle">React Media App</h1>
         <Form setSearchTerm={setSearchTerm} />
@@ -41,10 +35,13 @@ function App() {
         ) : error ? (
           <h1 className="error">{error}</h1>
         ) : (
-          <MovieList movieList={movies} setModal={setModal} setModalMovie={setModalMovie}/>
+          <MovieList
+            movieList={movies}
+            setModal={setModal}
+            setModalMovie={setModalMovie}
+          />
         )}
       </section>
-      
     </div>
   );
 }

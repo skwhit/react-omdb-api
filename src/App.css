@@ -1,18 +1,12 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  /* overflow-x: hidden; */
 }
 
 .app {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.scrollDisabled {
-  overflow-y: hidden;
-  height: 100vh;
 }
 
 .titleContainer {
