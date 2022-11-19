@@ -38,6 +38,7 @@ export const getMoviesByID = async (ID, setModalMovie, setIsLoading) => {
     `http://www.omdbapi.com/?i=${ID}&apikey=${apiKey}`
   );
   const movie = await result.json();
+  console.log(movie)
   setModalMovie(movie);
   setIsLoading(false);
 };

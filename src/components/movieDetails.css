@@ -30,5 +30,13 @@
     flex-direction: column;
   }
   
+  .detailsBody {
+    max-width: 100%;
+  }
+
+  .movieDetails img {
+    width: 60%;
+    align-self: center;
+  }
 }
 
