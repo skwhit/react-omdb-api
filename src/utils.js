@@ -9,23 +9,31 @@ export async function getMovieByName(searchTerm, setMovie) {
   setMovie(movie.Title);
 }
 
-export async function getMovieListByName(searchTerm,setMovies,setError,setIsLoading
+export async function getMovieListByName(
+  searchTerm,
+  setMovies,
+  setError,
+  setIsLoading,
+  currentPage,
+  setPageNumbers
 ) {
   try {
     const result = await fetch(
-      `http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}`
+      `http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}&page=${currentPage}`
     );
     const movies = await result.json();
+    console.log(movies);
     console.log(movies.Search);
     if (movies.Search === undefined) {
       setError("This title is invalid. Please enter another.");
     } else {
       setMovies(movies.Search);
+      setPageNumbers(Math.ceil(movies.totalResults/10));
       setError(null);
+      
     }
     setIsLoading(false);
-  } 
-  catch (err) {
+  } catch (err) {
     console.log(err.message);
     setError(err.message);
     setMovies([]);
@@ -38,7 +46,7 @@ export const getMoviesByID = async (ID, setModalMovie, setIsLoading) => {
     `http://www.omdbapi.com/?i=${ID}&apikey=${apiKey}`
   );
   const movie = await result.json();
-  console.log(movie)
+  console.log(movie);
   setModalMovie(movie);
   setIsLoading(false);
 };

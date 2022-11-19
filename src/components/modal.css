@@ -9,6 +9,7 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
+    z-index: 1;
 }
 
 .modal-container {
@@ -34,7 +35,7 @@
 
 .close button:hover {
   cursor: pointer;
-  color: red;
+  color: rgb(6, 92, 240);
 }
 
 @media (max-width: 1200px) {

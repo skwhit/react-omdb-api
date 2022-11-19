@@ -1,24 +1,46 @@
 .inputContainer {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 5px;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.searchBar {
+  display: flex;
+  gap: 5px;
+}
+
+.movieInput {
+  width: 300px;
+  padding: 5px;
+}
+
+.mediaType {
+  padding: 5px;
 }
 
 .inputContainer button {
   width: 100px;
-  background: lightgrey;
+  background: rgb(6, 92, 240);
   border-radius: 5px;
+  color: white;
+  padding: 5px;
 }
 
 .inputContainer button:hover {
   cursor: pointer;
 }
 
-.movieInput {
-  width: 200px;
+.pagination {
+  justify-items: flex-end;
 }
 
-.pageTitle {
-  text-align: center;
+.pagination button {
+  width: 50px;
 }
+
+
+
+
