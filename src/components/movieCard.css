@@ -3,13 +3,12 @@
     flex-direction: column;
     width: 20%;
     height: 50%;
-    padding: 1px;
     
   }
   
   .movieCard {
     height: 100%;
-    
+    border: 1px solid white;
   }
 
   .movieImgContainer {
@@ -17,6 +16,8 @@
     height: 80%;
     display: flex;
     justify-content: center;
+    padding-top: 10px;
+    
   }
 
   .movieCard img {
@@ -56,14 +57,38 @@
   }
 
   @media (max-width: 1200px) {
-    .movieCard {
+    .movieCardContainer {
       width: calc(100% / 3);
     }
   
   }
+
+  @media (max-height: 700px) {
+    .movieImgContainer {
+      height: 70%;
+    }
+
+    .cardBody {
+      height: 30%;
+    }
+  }
+
+  @media (max-height: 500px) {
+    .movieImgContainer {
+      height: 80%;
+    }
+
+    .cardBody {
+      height: 20%;
+    }
+
+    .movieCardContainer {
+      height: 100%;
+    }
+  }
   
   @media (max-width: 600px) {
-    .movieCard {
+    .movieCardContainer {
       width: 100%;
     }
   
