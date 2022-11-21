@@ -36,6 +36,10 @@ function App() {
     window.scrollTo(0, 0);
   }, [searchterm]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
   return (
     <div className="app">
       <Modal show={modal} setModal={setModal} movie={modalMovie} />
