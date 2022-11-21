@@ -2,7 +2,7 @@ const apiKey = `${process.env.REACT_APP_API_KEY}`;
 
 export async function getMovieByName(searchTerm, setMovie) {
   const result = await fetch(
-    `http://www.omdbapi.com/?t=${searchTerm}&apikey=${apiKey}`
+    `https://www.omdbapi.com/?t=${searchTerm}&apikey=${apiKey}`
   );
   const movie = await result.json();
   console.log(movie);
@@ -20,7 +20,7 @@ export async function getMovieListByName(
 ) {
   try {
     const result = await fetch(
-      `http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}&page=${currentPage}&type=${type}`
+      `https://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}&page=${currentPage}&type=${type}`
     );
     const movies = await result.json();
     console.log(movies);
@@ -43,7 +43,7 @@ export async function getMovieListByName(
 
 export const getMoviesByID = async (ID, setModalMovie, setIsLoading) => {
   const result = await fetch(
-    `http://www.omdbapi.com/?i=${ID}&apikey=${apiKey}`
+    `https://www.omdbapi.com/?i=${ID}&apikey=${apiKey}`
   );
   const movie = await result.json();
   console.log(movie);
