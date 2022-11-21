@@ -1,95 +1,91 @@
 .movieCardContainer {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    height: 50%;
-    
-  }
-  
-  .movieCard {
-    height: 100%;
-    border: 1px solid white;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 50%;
+}
 
+.movieCard {
+  height: 100%;
+  border: 1px solid white;
+}
+
+.movieImgContainer {
+  background-color: #181818;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.movieCard img {
+  height: 100%;
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  border-bottom: none;
+  object-fit: scale-down;
+}
+
+.cardBody {
+  height: 20%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: white;
+  background-color: #181818;
+  border-radius: 0 0 3px 3px;
+  align-items: center;
+  text-align: center;
+}
+
+.detailsButton {
+  width: 50%;
+  padding: 2px;
+  border: 1px solid rgb(6, 92, 240);
+  border-radius: 5px;
+  color: rgb(6, 92, 240);
+  background-color: lightgrey;
+  font-weight: bolder;
+}
+
+.detailsButton:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .movieCardContainer {
+    width: calc(100% / 3);
+  }
+}
+
+@media (max-height: 700px) {
   .movieImgContainer {
-    background-color: #181818;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    
+    height: 70%;
   }
 
-  .movieCard img {
-    height: 100%;
-    width: 100%;
-    border-radius: 3px 3px 0 0;
-    border-bottom: none;
-    object-fit: scale-down;
+  .cardBody {
+    height: 30%;
   }
-  
+}
+
+@media (max-height: 500px) {
+  .movieImgContainer {
+    height: 80%;
+  }
+
   .cardBody {
     height: 20%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    color: white;
-    background-color: #181818;
-    border-radius: 0 0 3px 3px;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .detailsButton {
-    width: 50%;
-    padding: 2px;
-    border: 1px solid rgb(6, 92, 240);
-    border-radius: 5px;
-    color: rgb(6, 92, 240);
-    background-color: lightgrey;
-    font-weight: bolder;
-  }
-  
-  .detailsButton:hover {
-    background-color: grey;
-    cursor: pointer;
   }
 
-  @media (max-width: 1200px) {
-    .movieCardContainer {
-      width: calc(100% / 3);
-    }
-  
+  .movieCardContainer {
+    height: 100%;
   }
+}
 
-  @media (max-height: 700px) {
-    .movieImgContainer {
-      height: 70%;
-    }
-
-    .cardBody {
-      height: 30%;
-    }
+@media (max-width: 600px) {
+  .movieCardContainer {
+    width: 100%;
   }
-
-  @media (max-height: 500px) {
-    .movieImgContainer {
-      height: 80%;
-    }
-
-    .cardBody {
-      height: 20%;
-    }
-
-    .movieCardContainer {
-      height: 100%;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .movieCardContainer {
-      width: 100%;
-    }
-  
-  }
+}

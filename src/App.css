@@ -6,8 +6,8 @@
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .titleContainer {
@@ -24,32 +24,18 @@
 
 .pageTitle {
   width: 200px;
+  font-size: 1.3rem;
 }
 
-.transition, .error {
+.transition,
+.error {
   text-align: center;
   align-self: center;
-  
 }
 
 .error {
   font-size: 3rem;
-}
-
-.transition {
-  animation: spin 2s linear infinite;
-  background: linear-gradient(lightgrey, rgb(6, 92, 240));
-  border-radius: 50%;
-  font-size: 10rem;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  color: white;
 }
 
 .moviesContainer {
@@ -59,4 +45,17 @@
   padding-top: 60px;
   height: calc(100vh);
   background-color: #181818;
+}
+
+@media (max-width: 800px) {
+  .titleContainer {
+    height: 120px;
+    flex-direction: column;
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .moviesContainer {
+    padding-top: 120px;
+  }
 }

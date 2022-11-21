@@ -15,22 +15,22 @@ export async function getMovieListByName(
   setError,
   setIsLoading,
   currentPage,
-  setPageNumbers
+  setPageNumbers,
+  type
 ) {
   try {
     const result = await fetch(
-      `http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}&page=${currentPage}`
+      `http://www.omdbapi.com/?s=${searchTerm}&apikey=${apiKey}&page=${currentPage}&type=${type}`
     );
     const movies = await result.json();
     console.log(movies);
     console.log(movies.Search);
     if (movies.Search === undefined) {
-      setError("This title is invalid. Please enter another.");
+      setError("No results found. Please try again.");
     } else {
       setMovies(movies.Search);
-      setPageNumbers(Math.ceil(movies.totalResults/10));
+      setPageNumbers(Math.ceil(movies.totalResults / 10));
       setError(null);
-      
     }
     setIsLoading(false);
   } catch (err) {

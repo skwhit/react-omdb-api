@@ -6,11 +6,8 @@ import { getMoviesByID } from "../utils";
 export default function MovieCard(props) {
   const { title, type, posterUrl, imdbID, setModal, setModalMovie } = props;
 
-  const [isLoading, setIsLoading] = useState(false);
-
   const toggleModal = () => {
     setModal(true);
-    setIsLoading(true);
     getMoviesByID(imdbID, setModalMovie, setIsLoading);
   };
 
@@ -21,7 +18,7 @@ export default function MovieCard(props) {
           <img src={posterUrl} alt="batman" />
         </div>
         <div className="cardBody">
-          <h3>{title}</h3>
+          <h3 name={type}>{title}</h3>
           <button onClick={toggleModal} className="detailsButton" type="submit">
             Details
           </button>

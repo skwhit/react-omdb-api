@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./movieDetails.css"
+import "./movieDetails.css";
 
 export default function MovieDetails(props) {
   const { posterUrl, title, rated, runtime, genre, plot, actors, rating } =
@@ -39,5 +39,5 @@ MovieDetails.propTypes = {
   genre: PropTypes.string,
   plot: PropTypes.string,
   actors: PropTypes.string,
-  rating: PropTypes.string
+  rating: PropTypes.string,
 };

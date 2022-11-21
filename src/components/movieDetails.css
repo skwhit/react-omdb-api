@@ -29,7 +29,7 @@
   .movieDetails {
     flex-direction: column;
   }
-  
+
   .detailsBody {
     max-width: 100%;
   }
@@ -39,4 +39,3 @@
     align-self: center;
   }
 }
-

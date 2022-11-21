@@ -2,9 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 5px;
+  gap: 50px;
   width: 100%;
+  height: 100%;
   padding-right: 20px;
+  align-items: center;
 }
 
 .searchBar {
@@ -33,14 +35,74 @@
   cursor: pointer;
 }
 
+.transition {
+  animation: spin 2s linear infinite;
+  background: linear-gradient(lightgrey, rgb(6, 92, 240));
+  border-radius: 50%;
+  font-size: 1.8rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .pagination {
   justify-items: flex-end;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+
+.pageInput {
+  width: 30px;
+  text-align: center;
+}
+
+.pagination p {
+  padding-bottom: 2px;
+  text-align: center;
+  padding-right: 5px;
 }
 
 .pagination button {
   width: 50px;
 }
 
+@media (max-width: 800px) {
+  .searchBar {
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 2px;
+    flex-wrap: wrap;
+  }
+}
 
+@media (max-width: 600px) {
+  .movieInput {
+    width: 200px;
+  }
 
+  .inputContainer {
+    gap: 10px;
+  }
 
+  .pagination button {
+    width: 40px;
+  }
+}
+
+@media (max-width: 370px) {
+  .transition {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+  }
+}
