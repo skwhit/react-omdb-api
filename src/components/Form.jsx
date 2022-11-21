@@ -11,11 +11,11 @@ export default function Form(props) {
     pageNumbers,
     setType,
     isLoading,
+    searchCount,
+    setSearchCount,
   } = props;
 
   const [inputValue, setInputValue] = useState("");
-
-  let count = 0;
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -32,7 +32,7 @@ export default function Form(props) {
   };
 
   const onSubmit = (e) => {
-    count++;
+    setSearchCount(searchCount + 1);
     e.preventDefault();
     setSearchTerm(convertString(inputValue));
     setInputValue("");
@@ -78,20 +78,21 @@ export default function Form(props) {
           autoFocus
           placeholder="Enter movie, series, episode, or game name..."
         />
-        <select
-          className="mediaType"
-          name="mediaType"
-          onChange={handleOptionChange}
-        >
-          <option value="">All Types</option>
-          <option value="movie">Movie</option>
-          <option value="series">Series</option>
-          <option value="episode">Episode</option>
-          <option value="game">Game</option>
-        </select>
-        <button type="submit" onClick={onSubmit}>
-          Search
-        </button>
+        <div className="search">
+          <select
+            className="mediaType"
+            name="mediaType"
+            onChange={handleOptionChange}
+          >
+            <option value="">All Types</option>
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="game">Game</option>
+          </select>
+          <button type="submit" onClick={onSubmit}>
+            Search
+          </button>
+        </div>
         {isLoading ? (
           <i className="fa-solid fa-volleyball fa-6x transition"></i>
         ) : (

@@ -14,6 +14,11 @@
   gap: 5px;
 }
 
+.search {
+  display: flex;
+  gap: 2px;
+}
+
 .movieInput {
   width: 300px;
   padding: 5px;
@@ -86,16 +91,18 @@
 }
 
 @media (max-width: 600px) {
-  .movieInput {
-    width: 200px;
-  }
-
   .inputContainer {
     gap: 10px;
   }
 
   .pagination button {
     width: 40px;
+  }
+}
+
+@media (max-width: 460px) {
+  .movieInput {
+    width: 200px;
   }
 }
 

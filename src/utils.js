@@ -8,7 +8,6 @@ export async function getMovieByName(searchTerm, setMovie) {
   console.log(movie);
   setMovie(movie.Title);
 }
-
 export async function getMovieListByName(
   searchTerm,
   setMovies,
@@ -16,7 +15,8 @@ export async function getMovieListByName(
   setIsLoading,
   currentPage,
   setPageNumbers,
-  type
+  type,
+  searchCount
 ) {
   try {
     const result = await fetch(
@@ -25,9 +25,11 @@ export async function getMovieListByName(
     const movies = await result.json();
     console.log(movies);
     console.log(movies.Search);
-    if (movies.Search === undefined) {
+
+    if (searchCount === 0) setError("");
+    else if (movies.Search === undefined)
       setError("No results found. Please try again.");
-    } else {
+    else {
       setMovies(movies.Search);
       setPageNumbers(Math.ceil(movies.totalResults / 10));
       setError(null);

@@ -15,6 +15,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageNumbers, setPageNumbers] = useState(1);
   const [type, setType] = useState("");
+  const [searchCount, setSearchCount] = useState(0);
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,17 +26,15 @@ function App() {
       setIsLoading,
       currentPage,
       setPageNumbers,
-      type
+      type,
+      searchCount
     );
   }, [searchterm, currentPage, type]);
 
   useEffect(() => {
     setCurrentPage(1);
+    window.scrollTo(0, 0);
   }, [searchterm]);
-
-  useEffect(() => {
-    console.log(type);
-  }, [type]);
 
   return (
     <div className="app">
@@ -49,6 +48,8 @@ function App() {
           pageNumbers={pageNumbers}
           setType={setType}
           isLoading={isLoading}
+          searchCount={searchCount}
+          setSearchCount={setSearchCount}
         />
       </section>
       <section className="moviesContainer">
