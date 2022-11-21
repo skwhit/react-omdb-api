@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-omdb-api/static/css/main.cff41901.css",
-    "main.js": "/react-omdb-api/static/js/main.936521c5.js",
+    "main.css": "/react-omdb-api/static/css/main.1ddc492a.css",
+    "main.js": "/react-omdb-api/static/js/main.ee49c6d2.js",
     "index.html": "/react-omdb-api/index.html",
-    "main.cff41901.css.map": "/react-omdb-api/static/css/main.cff41901.css.map",
-    "main.936521c5.js.map": "/react-omdb-api/static/js/main.936521c5.js.map"
+    "main.1ddc492a.css.map": "/react-omdb-api/static/css/main.1ddc492a.css.map",
+    "main.ee49c6d2.js.map": "/react-omdb-api/static/js/main.ee49c6d2.js.map"
   },
   "entrypoints": [
-    "static/css/main.cff41901.css",
-    "static/js/main.936521c5.js"
+    "static/css/main.1ddc492a.css",
+    "static/js/main.ee49c6d2.js"
   ]
 }
