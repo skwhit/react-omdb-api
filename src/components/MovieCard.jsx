@@ -6,6 +6,8 @@ import { getMoviesByID } from "../utils";
 export default function MovieCard(props) {
   const { title, type, posterUrl, imdbID, setModal, setModalMovie } = props;
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const toggleModal = () => {
     setModal(true);
     getMoviesByID(imdbID, setModalMovie, setIsLoading);
