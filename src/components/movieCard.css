@@ -37,6 +37,7 @@
   border-radius: 0 0 3px 3px;
   align-items: center;
   text-align: center;
+  font-size: .9rem;
 }
 
 .detailsButton {
@@ -47,6 +48,7 @@
   color: rgb(6, 92, 240);
   background-color: lightgrey;
   font-weight: bolder;
+  max-width: 200px;
 }
 
 .detailsButton:hover {

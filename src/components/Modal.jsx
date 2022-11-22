@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MovieDetails from "./MovieDetails";
 import "./modal.css";
 
 export default function Modal(props) {
   const { show, setModal, movie } = props;
 
-  const onClose = () => {
+  const onClose = (e) => {
+    e.preventDefault();
     setModal(false);
   };
+
+  const handleKeydown = (e) => {
+    console.log(e)
+    if (e.key === "Escape") {
+      onClose(e);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeydown);
+    return () => document.removeEventListener("keydown", handleKeydown);
+  });
 
   return (
     <>
@@ -16,7 +29,7 @@ export default function Modal(props) {
           <div className="modal-container">
             <div className="close">
               <button onClick={onClose}>
-                <i class="fa-solid fa-xmark fa-2x"></i>
+                <i className="fa-solid fa-xmark fa-2x"></i>
               </button>
             </div>
             <MovieDetails
