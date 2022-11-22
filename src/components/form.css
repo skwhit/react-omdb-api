@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .inputContainer {
   display: flex;
   align-items: center;
@@ -16,7 +20,7 @@
 
 .search {
   display: flex;
-  gap: 2px;
+  gap: 4px;
 }
 
 .movieInput {
@@ -24,8 +28,13 @@
   padding: 5px;
 }
 
+.movieInput:focus, .mediaType:focus {
+  outline-color: rgb(6, 92, 240);
+}
+
 .mediaType {
   padding: 5px;
+  border-radius: 2px;
 }
 
 .inputContainer button {
