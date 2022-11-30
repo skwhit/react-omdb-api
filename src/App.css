@@ -8,6 +8,7 @@
 .app {
   display: flex;
   flex-direction: column;
+  background-color: #181818;
 }
 
 .titleContainer {
@@ -45,6 +46,12 @@
   padding-top: 60px;
   height: calc(100vh);
   background-color: #181818;
+}
+
+@media (max-width: 1200px) {
+  .moviesContainer {
+    overflow-y: scroll;
+  }
 }
 
 @media (max-width: 800px) {
