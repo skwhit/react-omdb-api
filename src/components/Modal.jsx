@@ -11,7 +11,7 @@ export default function Modal(props) {
   };
 
   const handleKeydown = (e) => {
-    console.log(e)
+    console.log(e);
     if (e.key === "Escape") {
       onClose(e);
     }

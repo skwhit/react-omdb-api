@@ -8,6 +8,11 @@ export default function MovieCard(props) {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  let movieTitle = title;
+  if (movieTitle.length > 53) {
+    movieTitle = movieTitle.substring(0, 50) + "...";
+  }
+
   const toggleModal = () => {
     setModal(true);
     getMoviesByID(imdbID, setModalMovie, setIsLoading);
@@ -20,7 +25,7 @@ export default function MovieCard(props) {
           <img src={posterUrl} alt="batman" />
         </div>
         <div className="cardBody">
-          <h3 name={type}>{title}</h3>
+          <h3 name={type}>{movieTitle}</h3>
           <button onClick={toggleModal} className="detailsButton" type="submit">
             Details
           </button>
